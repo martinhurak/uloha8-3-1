@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+
+<style>
+    body
+    {background-color: bisque;
+    margin: 0%;}
+    form
+    {background-image:url(https://cdn.pixabay.com/photo/2017/07/27/15/24/movie-2545676_960_720.jpg);
+    background-repeat:no-repeat ;
+    padding: 15px;
+    max-width: 45%;}
+    input ,textarea
+    {display: block;
+    border-radius: 3px;
+    margin :3px auto;
+    width: 100%;
+    box-sizing: border-box;}
+
+    form h1 
+    {font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.02em;}
+
+    .sub_button
+    {width: 50%; 
+    padding: 0.5em;
+    background-color: green;
+    display: block;
+    float: left;
+    transition: all 1s;
+    }
+    .sub_button:hover
+    {background-color: greenyellow;
+    transform: scale(1.1);}
+
+    #cancel
+    {color: rgb(78, 17, 17);
+    width: 50%;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: color 1s;
+    }
+    #cancel:hover
+    {color: red;}
+
+    
+
+    nav 
+        {position:initial;
+        background-color: #73706C;
+        min-width: max-content;
+        left: 0%;
+        top: 0%;}
+        .menu li ,.menu a  
+        { 
+        padding: 1em;
+        color: #F2F2F2;
+          display: inline-block;
+         text-decoration: none;}
+        .menu 
+        {margin: 0%;
+        padding-left: 0%;
+        list-style: none;}
+        .menu a 
+        {margin: 0em 0.3em;
+        padding: 0em;
+        transition: color 1s;
+        }
+        .menu a:hover
+        {color:black ;}
+
+        #range
+        {max-width: 90%;
+        display: inline-block;}
+
+        .logo
+        {position: relative;
+        font-size: 16px;
+        margin: 1em;}
+
+        .first-sqare ,
+        .second-sqare,
+        .third-sqare,
+        .four-sqare
+        {position: absolute;
+        width: 50px; 
+        height: 50px}
+
+        .first-sqare 
+        {border: solid 0.625em #0F2859;}
+
+        .second-sqare
+        {border: solid 0.625em #7787A6;
+        z-index: 1;
+        left: 1.25em;
+        }
+
+        .third-sqare
+        {border: solid 0.625em #082040;
+        z-index: 2;
+        left: 1.25em;
+        top:1.25em;}
+
+        .four-sqare
+        {border: solid 0.625em #384D59;
+        z-index: 3;
+        top: 1.25em;}
+</style>
+<script>
+    
+    function click_butt(){
+        alert("stahuje sa historia prehladania")
+    }
+</script>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+           <li><a href="../index.html">domov</a></li> 
+           <li><a href="rebricek_najlepsich_filmov.html">rerbricek najlpepšich filmov </a></li>
+           <li><a href="add-review.html.html">Pridať recenziu</a></li>
+        </ul>
+    </nav>
+    <form  method="get" autocomplete="on" >
+        <h1>formulár na pridanie recenzie </h1>
+        <input placeholder="názov filmu:" type="text" name="name" id="nazov" required>
+        <input placeholder="meno/nick :" type="text" name="name" id="meno">
+        <input placeholder="email :" type="email" name="email" id="e-mail" required >
+        <label for="date"> dátum, kedy bol film naposledny pozeraný : </label>
+        <input type="date" name="date" id="date">
+        <label for="range">číselné hodnotenie od 0 do 100</label>
+        <input type="range" name="range" id="range" step="10" min="0" max="100" oninput="this.nextElementSibling.value = this.value">
+        <output>50</output> 
+        <span>%</span>
+        <br>
+        <label for="movies">žáner filmu</label>
+        <select id="movies" name="movies">
+            <option value="horor">horor</option>
+            <option value="anime">Anime</option>
+            <option value="comedy">komedia</option>
+            <option value="adventura">dobrodružny</option>
+        </select>
+        
+        <textarea placeholder="kommentar"  name="textarea" id="commentar" rows="5"> </textarea>
+        <input onclick="click_butt" class="sub_button" type="submit" value="odoslať recenziu">
+        <input type="reset" name="reset" id="cancel" value="zrušit">
+    </form>
+    <div class="logo">
+        <div class="first-sqare"></div>
+        <div class="second-sqare"></div>
+        <div class="third-sqare"></div>
+        <div class="four-sqare"></div>
+    </div>
+</body>
+</html>
